@@ -7,6 +7,8 @@ javascript: (function () {
         0 0 5px rgba(1, 1, 1, 0.8),
         0 0 1em rgba(255, 200, 200, 0.6),
         0 0 10px rgba(255, 192, 192, 0.3);
+      -webkit-text-fill-color: white; /* Chrome fallback colour */
+      -webkit-text-fill-color: ThreeDHighlight; /* Gets around bug where text is not affected by filter */
     }
 
     body > *:not(.overlay) {
