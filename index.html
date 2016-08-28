@@ -27,13 +27,15 @@ javascript: (function () {
     body > *:not(.overlay) {
       background-blend-mode: overlay;
       background-color: transparent;
-      filter: sepia(90%) invert(100%) hue-rotate(180deg) blur(0.2px) brightness(170%) !important;
-      -webkit-filter: sepia(90%) invert(100%) hue-rotate(180deg) blur(0.2px) brightness(170%) !important;
+      --filter-chain: sepia(90%) invert(100%) hue-rotate(180deg) blur(0.2px) brightness(170%);
+      filter: var(--filter-chain) !important;
+      -webkit-filter: var(--filter-chain) !important;
     }
 
-    img {
-      filter: blur(0.5px);
-      -webkit-filter: blur(0.5px);
+    img, video {
+      --filter-chain: invert(100%) blur(1px) brightness(80%);
+      filter: var(--filter-chain);
+      -webkit-filter: var(--filter-chain);
     }
 
     .overlay {
