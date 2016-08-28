@@ -4,7 +4,7 @@
     <title>ＭＡＫＥＴＥＲＭ</title>
     <meta charset="UTF-8">
   </head>
-  <body　style="font-smooth: never; -webkit-font-smoothing: never;">
+  <body>
     <center>
       <h1>ＭＡＫＥＴＥＲＭ</h1>
       <hr>
@@ -17,20 +17,18 @@ javascript: (function () {
   const css = `
     body {
       background-blend-mode: overlay;
-      background-color: #000;
+      background-color: #0A0A0A;
       text-shadow:
         0 0 5px rgba(1, 1, 1, 0.8),
         0 0 1em rgba(255, 200, 200, 0.6),
         0 0 10px rgba(255, 192, 192, 0.3);
-      -webkit-text-fill-color: white; /* Chrome fallback colour */
-      -webkit-text-fill-color: ThreeDHighlight; /* Gets around bug where text is not affected by filter */
     }
 
     body > *:not(.overlay) {
       background-blend-mode: overlay;
       background-color: transparent;
-      filter: sepia(95%) invert(100%) hue-rotate(180deg) blur(0.2px) brightness(170%) !important;
-      -webkit-filter: sepia(95%) invert(100%) hue-rotate(180deg) blur(0.2px) brightness(170%) !important;
+      filter: sepia(90%) invert(100%) hue-rotate(180deg) blur(0.2px) brightness(170%) !important;
+      -webkit-filter: sepia(90%) invert(100%) hue-rotate(180deg) blur(0.2px) brightness(170%) !important;
     }
 
     img {
@@ -67,6 +65,12 @@ javascript: (function () {
       mix-blend-mode: screen;
       opacity: 0.1;
     }
+
+    #orange {
+      background-color: #FCE05F;
+      mix-blend-mode: color-burn;
+      opacity: 0.5;
+    }
   `;
 
   const style = document.createElement('style');
@@ -80,9 +84,9 @@ javascript: (function () {
 
   const makeOverlay = (id) => Object.assign(document.createElement('div'), { id, className: 'overlay' });
   const makeAndAddOverlay = (id) => document.body.appendChild(makeOverlay(id));
-  ['grill', 'noise', 'scanlines'].forEach(makeAndAddOverlay);
+  ['grill', 'noise', 'scanlines', 'orange'].forEach(makeAndAddOverlay);
 
-  console.log('HELLO WORLD');
+  console.log('ＨＥＬＬＯ　ＷＯＲＬＤ');
 }());
       ">
         ＭＡＫＥＴＥＲＭ
