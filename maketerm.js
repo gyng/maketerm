@@ -7,16 +7,14 @@ javascript: (function () {
         0 0 5px rgba(1, 1, 1, 0.8),
         0 0 1em rgba(255, 200, 200, 0.6),
         0 0 10px rgba(255, 192, 192, 0.3);
-      // filter: url(#mt-curve) !important;
     }
 
-    body > *:not(.overlay) {
+    body > *:not(.mt-overlay) {
       background-blend-mode: overlay;
       background-color: transparent;
-      --filter-chain: sepia(90%) invert(100%) hue-rotate(180deg) blur(0.2px) brightness(170%);
+      --filter-chain: sepia(90%) invert(100%) hue-rotate(180deg) blur(0.2px) brightness(170%) url(#mt-curve);
       filter: var(--filter-chain) !important;
       -webkit-filter: var(--filter-chain) !important;
-      filter: url(#mt-curve) !important;
     }
 
     img, video {
@@ -24,6 +22,10 @@ javascript: (function () {
       filter: var(--filter-chain);
       -webkit-filter: var(--filter-chain);
     }
+
+    // iframe {
+    //   filter: url(#mt-curve) !important;
+    // }
 
     .mt-overlay {
       position: fixed;
@@ -71,16 +73,15 @@ javascript: (function () {
       pointer-events: none;
     }
 
-    #bodywrap {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100vw;
-      // height: 100vh;
-      // overflow: scroll;
-      filter: url(#mt-curve) !important;
-      background-color: #0A0A0A;
-    }
+    // #bodywrap {
+    //   position: fixed;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100vw;
+    //   height: 100vh;
+    //   overflow: scroll;
+    //   filter: url(#mt-curve) !important;
+    // }
   `;
 
   const style = document.createElement('style');
@@ -96,11 +97,11 @@ javascript: (function () {
   const svgContainer = Object.assign(document.createElement('div'), {
     id: 'mt-svg-container',
     innerHTML: `
-      <svg xmlns="http://www.w3.org/2000/svg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
         <defs>
           <filter id="mt-curve" x="-50%" y="-50%" width="200%" height="200%">
              <feImage result="warp" xlink:href="${displacementTexture}" />
-             <feDisplacementMap xChannelSelector="G" yChannelSelector="R" in="SourceGraphic" in2="warp" scale="300" />
+             <feDisplacementMap xChannelSelector="G" yChannelSelector="R" in="SourceGraphic" in2="warp" scale="200" />
           </filter>
         </defs>
       </defs>
