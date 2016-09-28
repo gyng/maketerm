@@ -1,0 +1,70 @@
+html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+}
+
+.main-body {
+  background-image: url(i/roombg.jpg);
+  background-size: cover;
+}
+
+iframe {
+  border: 0;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.monitor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(i/bg-notext-foggy-desk.png);
+  background-size: cover;
+  height: 960px;
+  min-width: 1280px;
+}
+
+.screen {
+  overflow: hidden;
+  mix-blend-mode: screen;
+  width: 60%;
+  height: 60%;
+}
+
+.screen-content {
+  overflow: hidden;
+  position: absolute;
+  left: -15%;
+  top: -20%;
+  width: 105%;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8) ;
+}
+
+#mt-svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2147483647;
+  pointer-events: none;
+}
