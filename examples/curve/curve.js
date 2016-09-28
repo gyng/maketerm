@@ -18,7 +18,7 @@
   // Override maketerm.js filter chain
   const css = `
     :root {
-      --filter-chain: sepia(90%) invert(100%) hue-rotate(180deg) blur(0.2px) brightness(170%) url(#mt-curve);
+      --filter-chain: sepia(90%) hue-rotate(180deg) blur(0.2px) brightness(170%) url(#mt-curve);
     }
   `;
 
